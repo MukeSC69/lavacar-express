@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavacar Express</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f6f8;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #162d66;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #1e3a8a;
+        }
+
+        .servicios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+            /* Animación inicial */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #162d66;
+        }
+
+        .redes {
+            text-align: center;
+        }
+
+        .redes a {
+            margin: 10px;
+            display: inline-block;
+            font-weight: bold;
+            text-decoration: none;
+            color: #1e3a8a;
+        }
+
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Lavacar Express</h1>
+        <p>Lavado de autos a domicilio en San José, Costa Rica 🚗</p>
+    </header>
+
+    <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#reserva">Reservar</a>
+        <a href="#redes">Redes Sociales</a>
+    </nav>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+
+        <div class="servicios">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=800&q=80" alt="Lavado exterior">
+                <h3>Lavado Exterior</h3>
+                <p>Limpieza completa de carrocería y llantas.</p>
+            </div>
+
+            <div class="card">
+                <img src="img/interior.jpg" alt="Limpieza interior">
+                <h3>Limpieza Interior</h3>
+                <p>Aspirado, limpieza de tablero y detallado interior.</p>
+            </div>
+
+            <div class="card">
+                <img src="img/completo.png" alt="Lavado completo">
+                <h3>Lavado Completo</h3>
+                <p>Interior + exterior con acabado profesional.</p>
+            </div>
+
+            <div class="card">
+                <img src="img/encerado.jpg" alt="Encerado premium">
+                <h3>Encerado Premium</h3>
+                <p>Protección y brillo duradero para tu vehículo.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="reserva">
+        <h2>Agendar Servicio</h2>
+
+        <form id="formReserva">
+
+            <label>Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label>Teléfono:</label>
+            <input type="tel" id="telefono" required>
+
+            <label>Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <label>Horario disponible:</label>
+            <select id="hora" required>
+                <option value="">Selecciona una hora</option>
+                <option>8:00 AM</option>
+                <option>10:00 AM</option>
+                <option>1:00 PM</option>
+                <option>3:00 PM</option>
+                <option>5:00 PM</option>
+            </select>
+
+            <button type="submit">Reservar vía WhatsApp</button>
+
+        </form>
+    </section>
+
+    <section id="redes" class="redes">
+        <h2>Síguenos</h2>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Instagram</a>
+        <a href="#" target="_blank">TikTok</a>
+    </section>
+
+    <footer>
+        © 2026 Lavacar Express - Todos los derechos reservados
+    </footer>
+
+    <a class="whatsapp-btn"
+       href="https://wa.me/50688888888"
+       target="_blank">
+       💬
+    </a>
+
+    <script>
+
+        const formulario = document.getElementById("formReserva");
+
+        formulario.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const nombre = document.getElementById("nombre").value;
+            const telefono = document.getElementById("telefono").value;
+            const fecha = document.getElementById("fecha").value;
+            const hora = document.getElementById("hora").value;
+
+            if (hora === "") {
+                alert("Selecciona una hora disponible.");
+                return;
+            }
+
+            const numeroWhatsApp = "50688888888";
+
+            const mensaje =
+                "Hola, quiero agendar un lavado 🚗%0A%0A" +
+                "Nombre: " + nombre + "%0A" +
+                "Teléfono: " + telefono + "%0A" +
+                "Fecha: " + fecha + "%0A" +
+                "Hora: " + hora;
+
+            const url = "https://wa.me/" + numeroWhatsApp + "?text=" + mensaje;
+
+            window.open(url, "_blank");
+        });
+
+        // Animaciones Scroll
+        const cards = document.querySelectorAll(".card");
+
+        window.addEventListener("scroll", function() {
+            cards.forEach(card => {
+                const position = card.getBoundingClientRect().top;
+                const screenHeight = window.innerHeight;
+
+                if (position < screenHeight - 100) {
+                    card.classList.add("visible");
+                }
+            });
+        });
+
+        // Hace que aparezcan las que ya están visibles al cargar
+        window.dispatchEvent(new Event('scroll'));
+
+    </script>
+
+</body>
+
+</html>
